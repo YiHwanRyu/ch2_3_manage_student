@@ -18,6 +18,7 @@ public class StudentService {
     studentRepository.save(student);
   }
 
+  // repository에서 예외 발생 시킬지 service에서 예외 발생 시킬지 팀원끼리 룰로 정해야함.
   public Student getStudent(String name) {
     return studentRepository.findByName(name)
         .orElseThrow(() -> new IllegalArgumentException("해당하는 학생이 없습니다."));

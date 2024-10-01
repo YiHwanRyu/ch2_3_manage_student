@@ -7,13 +7,9 @@ import java.util.Map;
 import org.fastcampus.student_management.domain.Course;
 import org.fastcampus.student_management.domain.DayOfWeek;
 
-public class CourseRepository {
+public class CourseQueryRepositoryImpl {
 
   private final Map<String, Course> courseMap = new HashMap<>();
-
-  public void save(Course course) {
-    courseMap.put(course.getCourseName(), course);
-  }
 
   public List<Course> getCourseDayOfWeek(DayOfWeek dayOfWeek) {
     List<Course> courses = new ArrayList<>();
@@ -33,11 +29,5 @@ public class CourseRepository {
       }
     }
     return courses;
-  }
-
-  public void saveCourses(List<Course> courses) {
-    for (Course course : courses) {
-      courseMap.put(course.getCourseName(), course);
-    }
   }
 }
